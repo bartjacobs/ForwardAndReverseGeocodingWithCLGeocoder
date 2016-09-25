@@ -17,9 +17,67 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MVb-i5-ef5">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HYl-bo-ccP">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0m8-UE-UeV">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYM-vJ-LMb">
+                                <state key="normal" title="Fetch Coordinates"/>
+                                <connections>
+                                    <action selector="geocode:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Bed-dt-o69"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TUm-vf-LHu"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-, -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDJ-jW-LJs">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cl4-1h-Qcq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0m8-UE-UeV" secondAttribute="trailing" constant="16" id="4TG-Q4-7WT"/>
+                            <constraint firstItem="pDJ-jW-LJs" firstAttribute="top" secondItem="QYM-vJ-LMb" secondAttribute="bottom" constant="8" id="AvB-Oy-Iee"/>
+                            <constraint firstItem="0m8-UE-UeV" firstAttribute="top" secondItem="HYl-bo-ccP" secondAttribute="bottom" constant="8" id="F3l-M5-6IO"/>
+                            <constraint firstItem="TUm-vf-LHu" firstAttribute="centerY" secondItem="QYM-vJ-LMb" secondAttribute="centerY" id="T9D-0O-LhM"/>
+                            <constraint firstItem="TUm-vf-LHu" firstAttribute="centerX" secondItem="QYM-vJ-LMb" secondAttribute="centerX" id="Wwc-Gd-aLk"/>
+                            <constraint firstItem="0m8-UE-UeV" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="16" id="bLe-lh-QIz"/>
+                            <constraint firstItem="pDJ-jW-LJs" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="16" id="e8r-QA-x7n"/>
+                            <constraint firstAttribute="trailing" secondItem="pDJ-jW-LJs" secondAttribute="trailing" constant="16" id="h8D-7T-29b"/>
+                            <constraint firstItem="QYM-vJ-LMb" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="lwE-du-aiH"/>
+                            <constraint firstAttribute="trailing" secondItem="MVb-i5-ef5" secondAttribute="trailing" constant="16" id="m1b-dV-z1b"/>
+                            <constraint firstItem="HYl-bo-ccP" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="16" id="mjL-wg-lBQ"/>
+                            <constraint firstAttribute="trailing" secondItem="HYl-bo-ccP" secondAttribute="trailing" constant="16" id="r7J-u7-guG"/>
+                            <constraint firstItem="MVb-i5-ef5" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="16" id="tI3-3q-RnW"/>
+                            <constraint firstItem="HYl-bo-ccP" firstAttribute="top" secondItem="MVb-i5-ef5" secondAttribute="bottom" constant="8" id="vHU-Pn-nhl"/>
+                            <constraint firstItem="MVb-i5-ef5" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="xh1-9z-FW2"/>
+                            <constraint firstItem="QYM-vJ-LMb" firstAttribute="top" secondItem="0m8-UE-UeV" secondAttribute="bottom" constant="8" id="zRl-pR-Kty"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="TUm-vf-LHu" id="yTs-z9-icK"/>
+                        <outlet property="cityTextField" destination="HYl-bo-ccP" id="QwM-KO-vzZ"/>
+                        <outlet property="countryTextField" destination="MVb-i5-ef5" id="TMM-Do-ED3"/>
+                        <outlet property="geocodeButton" destination="QYM-vJ-LMb" id="Cw3-Ng-PE1"/>
+                        <outlet property="locationLabel" destination="pDJ-jW-LJs" id="bpM-Kc-BPH"/>
+                        <outlet property="streetTextField" destination="0m8-UE-UeV" id="V3k-oA-6SU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
