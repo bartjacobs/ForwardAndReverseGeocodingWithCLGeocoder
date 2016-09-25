@@ -26,6 +26,14 @@ class ForwardGeocodingViewController: UIViewController {
 
     lazy var geocoder = CLGeocoder()
 
+    // MARK: - Initialization
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        title = "Forward Geocoding"
+    }
+
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
